@@ -14,7 +14,6 @@ using FluentValidation.AspNetCore;
 using RealEstate.Core;
 using ShoeStore.Core;
 using ShoeStore.Core.Models;
-using ShoeStore.Validation;
 
 namespace ShoeStore
 {
@@ -38,9 +37,8 @@ namespace ShoeStore
             
             services.AddDbContext<RealEstateDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("Default")));
-                
-            services.AddMvc()
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<ShoeUploadResourceValidator>());
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

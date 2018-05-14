@@ -16,13 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { ShoeFormComponent } from './components/shoe-form/shoe-form.component';
-import { ShoeService } from './services/shoe.service';
 import { AppErrorHandler } from "./components/app/app.error-handler";
-import { ShoeListComponent } from './components/shoe-list/shoe-list.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
-import { ViewShoeComponent } from './components/view-shoe/view-shoe.component';
-import { ShoeColorFormComponent } from './components/shoe-color-form/shoe-color-form.component';
 
 import { HouseComponent } from './components/house/house.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
@@ -41,11 +36,7 @@ NgModule({
         AppComponent,
         HomeComponent,
         NavBarComponent,
-        ShoeFormComponent,
-        ShoeListComponent,
         PaginationComponent,
-        ViewShoeComponent,
-        ShoeColorFormComponent,
         HouseComponent,
         HouseListComponent,
         RangeInputComponent,
@@ -66,16 +57,12 @@ NgModule({
             { path: 'home', component: HomeComponent },
             { path: 'house-list', component: HouseListComponent },
             { path: 'houses/:id', component: HouseComponent },
-            { path: 'shoes/new', component: ShoeFormComponent },
-            { path: 'shoes/edit/:id', component: ShoeFormComponent },
-            { path: 'shoes/:id', component: ViewShoeComponent },
-            { path: 'shoes', component: ShoeListComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ],
     providers: [
-        {provide: ErrorHandler, useClass: AppErrorHandler},
-        ShoeService, CountyService, HouseService, DataTransferService
+        { provide: ErrorHandler, useClass: AppErrorHandler },
+        CountyService, HouseService, DataTransferService
     ]
 })
 export class AppModuleShared {
