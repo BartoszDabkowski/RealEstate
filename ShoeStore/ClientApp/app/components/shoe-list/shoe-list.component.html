@@ -1,0 +1,36 @@
+
+<h2>Shoes</h2>
+<div class="form-group">
+    <label for="brand">Brand</label>
+    <select id="brand" class="form-control" [(ngModel)]="query.brandId" (change)="onFilterChange()">
+        <option value=""></option>
+        <option *ngFor="let b of brands" value="{{ b.id }}">{{ b.name }}</option>
+    </select>
+</div> 
+<table class="table table-hover table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th *ngFor="let c of columns" scope="col">
+            <div *ngIf="c.isSortable" (click)="sortBy(c.key)">
+                {{ c.title }}
+                <i *ngIf="query.sortBy === c.key"
+                   class="fa"
+                   [class.fa-sort-alpha-asc]="query.isSortAscending"
+                   [class.fa-sort-alpha-desc]="!query.isSortAscending">
+                </i>
+            </div>
+            <div *ngIf="!c.isSortable">
+                {{ c.title }}
+            </div>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let q of queryResult.items">
+            <td>{{q.name}}</td>
+            <td>{{q.brand.name}}</td>
+            <td><a [routerLink]="['/shoes/', q.id]">View</a></td>
+        </tr>
+    </tbody>
+</table>
+<pagination [total-items]="queryResult.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></pagination>

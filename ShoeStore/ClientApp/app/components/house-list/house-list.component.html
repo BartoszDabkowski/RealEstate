@@ -1,0 +1,25 @@
+
+<div class="container-fluid marg-top">
+    <div class="row">
+        <div class="col-sm-12">
+            <app-filter-bar></app-filter-bar>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-7">
+            <app-google-map></app-google-map>
+        </div>
+        <div class="col-sm-5">
+            <div class="row">
+                <div class="card col-sm-6 text-white shadow" *ngFor="let h of houses">
+                    <img class="card-img" src="/uploads/{{h.photos[0].fileName}}" alt="Card image cap">
+                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
+                        <h5 class="card-title">{{ h.name }}</h5>
+                        
+                            <p class="card-text text-right justify-content-end">{{h.price | currency: 'USD': 'symbol' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

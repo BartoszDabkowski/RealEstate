@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\BDabkows\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_ShoeStore.-1985192139.00" t="ExcludeRecursive" />
+    <e p="C:\Users\BDabkows\Documents\GitHub\ShoeStore" t="IncludeRecursive">
+      <e p=".angular-cli.json" t="Include" />
+      <e p=".gitignore" t="Include" />
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="ClientApp" t="Include">
+        <e p="app" t="Include">
+          <e p="app.browser.module.ts" t="Include" />
+          <e p="app.server.module.ts" t="Include" />
+          <e p="app.shared.module.ts" t="Include" />
+          <e p="components" t="Include">
+            <e p="app" t="Include">
+              <e p="app.component.css" t="Include" />
+              <e p="app.component.html" t="Include" />
+              <e p="app.component.ts" t="Include" />
+            </e>
+            <e p="home" t="Include">
+              <e p="home.component.html" t="Include" />
+              <e p="home.component.ts" t="Include" />
+            </e>
+            <e p="nav-bar" t="Include">
+              <e p="nav-bar.component.css" t="Include" />
+              <e p="nav-bar.component.html" t="Include" />
+              <e p="nav-bar.component.ts" t="Include" />
+            </e>
+            <e p="shoe-form" t="Include">
+              <e p="shoe-form.component.css" t="Include" />
+              <e p="shoe-form.component.html" t="Include" />
+              <e p="shoe-form.component.ts" t="Include" />
+            </e>
+          </e>
+          <e p="Models" t="Include">
+            <e p="brand.ts" t="Include" />
+          </e>
+          <e p="services" t="Include">
+            <e p="brand.service.ts" t="Include" />
+            <e p="shoe.service.ts" t="Include" />
+          </e>
+        </e>
+        <e p="boot.browser.ts" t="Include" />
+        <e p="boot.server.ts" t="Include" />
+        <e p="dist" t="Include">
+          <e p="main-server.js" t="Include" />
+          <e p="vendor.css" t="Include" />
+          <e p="vendor.js" t="Include" />
+        </e>
+        <e p="test" t="Include">
+          <e p="boot-tests.ts" t="Include" />
+          <e p="karma.conf.js" t="Include" />
+        </e>
+      </e>
+      <e p="Controllers" t="Include">
+        <e p="BrandsController.cs" t="Include" />
+        <e p="HomeController.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="BaseShoeResource.cs" t="Include" />
+          <e p="BrandResource.cs" t="Include" />
+          <e p="InventoryResource.cs" t="Include" />
+          <e p="KeyValuePairResource.cs" t="Include" />
+          <e p="SaveShoeResource.cs" t="Include" />
+          <e p="ShoeResource.cs" t="Include" />
+        </e>
+        <e p="SampleDataController.cs" t="Include" />
+        <e p="ShoesController.cs" t="Include" />
+      </e>
+      <e p="Mapping" t="Include">
+        <e p="MappingProfile.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20171121005550_InitialModel.cs" t="Include" />
+        <e p="20171121005550_InitialModel.Designer.cs" t="Include" />
+        <e p="20171127190237_SeedDatabase.cs" t="Include" />
+        <e p="20171127190237_SeedDatabase.Designer.cs" t="Include" />
+        <e p="20171129185012_AddStyleAndShoeStyleTables.cs" t="Include" />
+        <e p="20171129185012_AddStyleAndShoeStyleTables.Designer.cs" t="Include" />
+        <e p="20171129191733_SeedStylesTable.cs" t="Include" />
+        <e p="20171129191733_SeedStylesTable.Designer.cs" t="Include" />
+        <e p="20171130182434_AddColorAndShoeColorTable.cs" t="Include" />
+        <e p="20171130182434_AddColorAndShoeColorTable.Designer.cs" t="Include" />
+        <e p="20171130182621_SeedColorTable.cs" t="Include" />
+        <e p="20171130182621_SeedColorTable.Designer.cs" t="Include" />
+        <e p="20171208034824_AddSizeAndShoeSizeTable.cs" t="Include" />
+        <e p="20171208034824_AddSizeAndShoeSizeTable.Designer.cs" t="Include" />
+        <e p="20171208045607_SeedSizesTable.cs" t="Include" />
+        <e p="20171208045607_SeedSizesTable.Designer.cs" t="Include" />
+        <e p="20171212005832_RemoveShoeColorAndShoeSizeTable.cs" t="Include" />
+        <e p="20171212005832_RemoveShoeColorAndShoeSizeTable.Designer.cs" t="Include" />
+        <e p="20171212033428_AddInventoryTable.cs" t="Include" />
+        <e p="20171212033428_AddInventoryTable.Designer.cs" t="Include" />
+        <e p="20171212034624_AddTransactionTable.cs" t="Include" />
+        <e p="20171212034624_AddTransactionTable.Designer.cs" t="Include" />
+        <e p="20171213015629_AddIsDeletedToInventoryTable.cs" t="Include" />
+        <e p="20171213015629_AddIsDeletedToInventoryTable.Designer.cs" t="Include" />
+        <e p="ShoeStoreDbContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="Brand.cs" t="Include" />
+        <e p="Color.cs" t="Include" />
+        <e p="Inventory.cs" t="Include" />
+        <e p="Shoe.cs" t="Include" />
+        <e p="ShoeStyle.cs" t="Include" />
+        <e p="Size.cs" t="Include" />
+        <e p="Style.cs" t="Include" />
+        <e p="Transaction.cs" t="Include" />
+      </e>
+      <e p="npm-debug.log" t="Include" />
+      <e p="npm-shrinkwrap.json" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp2.0" t="Include">
+            <e p="ShoeStore.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="package.json" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Persistence" t="Include">
+        <e p="BrandRepository.cs" t="Include" />
+        <e p="ColorRepository.cs" t="Include" />
+        <e p="IBrandRepository.cs" t="Include" />
+        <e p="IColorRepository.cs" t="Include" />
+        <e p="IInventoryRepository.cs" t="Include" />
+        <e p="InventoryRepository.cs" t="Include" />
+        <e p="IShoeRepository.cs" t="Include" />
+        <e p="ISizeRepository.cs" t="Include" />
+        <e p="IStyleRepository.cs" t="Include" />
+        <e p="IUnitOfWork.cs" t="Include" />
+        <e p="ShoeRepository.cs" t="Include" />
+        <e p="ShoeStoreDbContext.cs" t="Include" />
+        <e p="SizeRepository.cs" t="Include" />
+        <e p="StyleRepository.cs" t="Include" />
+        <e p="UnitOfWork.cs" t="Include" />
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+      </e>
+      <e p="ShoeStore.csproj" t="IncludeRecursive" />
+      <e p="ShoeStore.sln" t="IncludeFlat" />
+      <e p="Startup.cs" t="Include" />
+      <e p="tsconfig.json" t="Include" />
+      <e p="Validation" t="Include">
+        <e p="ShoeUploadResourceValidator.cs" t="Include" />
+      </e>
+      <e p="Views" t="Include">
+        <e p="_ViewImports.cshtml" t="Include" />
+        <e p="_ViewStart.cshtml" t="Include" />
+        <e p="home" t="Include">
+          <e p="Index.cshtml" t="Include" />
+        </e>
+        <e p="Shared" t="Include">
+          <e p="_Layout.cshtml" t="Include" />
+          <e p="Error.cshtml" t="Include" />
+        </e>
+      </e>
+      <e p="webpack.config.js" t="Include" />
+      <e p="webpack.config.vendor.js" t="Include" />
+      <e p="wwwroot" t="Include">
+        <e p="dist" t="Include">
+          <e p="main-client.js" t="Include" />
+          <e p="main-client.js.map" t="Include" />
+          <e p="vendor-manifest.json" t="Include" />
+          <e p="vendor.css" t="Include" />
+          <e p="vendor.js" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

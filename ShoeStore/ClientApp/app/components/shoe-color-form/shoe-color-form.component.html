@@ -1,0 +1,9 @@
+text {{ colors}} text
+<div *ngFor="let c of colors" class="form-check">
+    <label class="form-check-label" for="color-{{ c.id }}">
+        <input class="form-check-input" id="color-{{ c.id }}" type="checkbox" value="{{c.id}}"
+               (change)="onColorToggle(c.id, $event)"
+               [checked]="shoe.colors.includes(c.id)">
+        {{c.name}}
+    </label>
+</div>

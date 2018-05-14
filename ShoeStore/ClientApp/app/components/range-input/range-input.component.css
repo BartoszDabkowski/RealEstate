@@ -1,0 +1,18 @@
+.range-input-full{
+    width:100%;
+}
+
+.dash {
+    border: 0;
+    color: #aaa;
+    background-color: #aaa;
+    display: inline-block;
+    height: 1px;
+    width: 10px;
+    position: relative;
+    vertical-align: middle;
+}
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}

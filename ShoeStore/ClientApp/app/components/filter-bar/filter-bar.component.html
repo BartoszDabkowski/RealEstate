@@ -1,0 +1,250 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+            <select id="county" class="form-control mr-sm-2" (change)="onCountyChange()" [(ngModel)]="filter.countyId" name="county" placeholder="County">
+                <option value="" disabled selected>County</option>
+                <option *ngFor="let c of counties" value="{{ c.id }}">{{ c.name }}</option>
+            </select>
+            <select id="city" class="form-control mr-sm-2" (change)="onCityChange()" [(ngModel)]="filter.cityId" name="city">
+                <option value="" disabled selected>City</option>
+                <option *ngFor="let c of cities" value="{{ c.id }}">{{ c.name }}</option>
+            </select>
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li ngbDropdown class="nav-item dropdown" [autoClose]="'outside'">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle">
+                    Types
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <label *ngFor="let ht of houseTypes" class="dropdown-item">
+                        <input type="radio" value="{{ht.id}}" [(ngModel)]="filter.houseTypeId"/>
+                        {{ ht.name }}
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            <li ngbDropdown class="nav-item dropdown" [autoClose]="'outside'" placement="bottom-right">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle">
+                    More
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu more" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Baths</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select id="baths" class="form-control mr-sm-2" [(ngModel)]="filter.minBathrooms">
+                                        <option value="0">0+</option>
+                                        <option value="1">1+</option>
+                                        <option value="2">2+</option>
+                                        <option value="3">3+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Price</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <!--TODO: apply binding for component filtering  <app-range-input></app-range-input>-->
+                                <div class="container-fluid no-padding">
+                                    <div class="row ">
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Min" name="min" [(ngModel)]="filter.minPrice">
+                                            </div>
+                                        </div>
+                                        <span class="no-padding">
+                                            <span class="dash"></span>
+                                        </span>
+
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Max" name="max" [(ngModel)]="filter.maxPrice">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--TODO: apply binding for component filtering  <app-range-input></app-range-input>-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">View</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input padding-left" id="has-view" [(ngModel)]="filter.hasView">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Watefront</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input padding-left" id="has-waterfront" [(ngModel)]="filter.hasWaterfront">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Square Ft.</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <!--TODO: apply binding for component filtering  <app-range-input></app-range-input>-->
+                                <div class="container-fluid no-padding">
+                                    <div class="row ">
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Min" name="min" [(ngModel)]="filter.minSqFt">
+                                            </div>
+                                        </div>
+                                        <span class="no-padding">
+                                            <span class="dash"></span>
+                                        </span>
+
+                                        <div class="col-sm-5">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Max" name="max" [(ngModel)]="filter.maxSqFt">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--TODO: apply binding for component filtering  <app-range-input></app-range-input>-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <button type="button" class="btn btn-success" (click)="filterHouses()">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline my-2 my-lg-0">
+            <select id="county" class="form-control mr-sm-2" (change)="onCountyChange()" [(ngModel)]="county.id" name="county" placeholder="County">
+                <option value="" disabled selected>County</option>
+                <option *ngFor="let c of counties" value="{{ c.id }}">{{ c.name }}</option>
+            </select>
+            <select id="city" class="form-control mr-sm-2" (change)="onCityChange()" [(ngModel)]="city.id" name="city">
+                <option value="" disabled selected>City</option>
+                <option *ngFor="let c of cities" value="{{ c.id }}">{{ c.name }}</option>
+            </select>
+        </form>
+        <ul class="navbar-nav mr-auto">
+            <li ngbDropdown class="nav-item dropdown" [autoClose]="'outside'">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle">
+                    Types
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <label *ngFor="let ht of houseTypes" class="dropdown-item">
+                        <input type="checkbox" />
+                        {{ ht.name }}
+                    </label>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+            <li ngbDropdown class="nav-item dropdown" [autoClose]="'outside'" placement="bottom-right">
+                <a ngbDropdownToggle class="nav-link dropdown-toggle">
+                    More
+                </a>
+                <div ngbDropdownMenu class="dropdown-menu more" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Baths</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <select id="baths" class="form-control mr-sm-2">
+                                        <option value="0">0+</option>
+                                        <option value="1">1+</option>
+                                        <option value="2">2+</option>
+                                        <option value="3">3+</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Price</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <app-range-input></app-range-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">View</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input padding-left" id="has-view">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Watefront</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input padding-left" id="has-waterfront">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label class="marg-top">Square Ft.</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <app-range-input></app-range-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <button type="button" class="btn btn-success" (click)="filterHouses()">Apply</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>-->
