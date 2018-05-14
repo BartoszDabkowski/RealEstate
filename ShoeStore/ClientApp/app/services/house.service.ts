@@ -12,6 +12,11 @@ export class HouseService {
         .map(res => res.json());
     }
 
+    getHouse(id: number) {
+        return this.http.get(this.houseEndpoint + id)
+            .map(res => res.json());
+    }
+
     toQueryString(queryObj: any) {
         var parts = [];
         for (var property in queryObj) {

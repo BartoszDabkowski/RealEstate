@@ -65,6 +65,7 @@ NgModule({
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'house-list', component: HouseListComponent },
+            { path: 'houses/:id', component: HouseComponent },
             { path: 'shoes/new', component: ShoeFormComponent },
             { path: 'shoes/edit/:id', component: ShoeFormComponent },
             { path: 'shoes/:id', component: ViewShoeComponent },

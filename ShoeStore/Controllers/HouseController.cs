@@ -42,6 +42,14 @@ namespace ShoeStore.Controllers
             return _mapper.Map<IEnumerable<HouseType>, IEnumerable<KeyValuePairResource>>(houseTypes);
         }
 
+        [HttpGet("{id}")]
+        public async Task<HouseResource> GetHouseAsync(int id)
+        {
+            var house = await _unitOfWork.Houses.GetHouseAsync(id);
+
+            return _mapper.Map<House, HouseResource>(house);
+        }
+
         [HttpGet]
         public async Task<QueryResultResource<HouseResource>> GetHousesAsync(HouseQueryResource houseQueryResource)
         {
@@ -51,8 +59,6 @@ namespace ShoeStore.Controllers
 
             return _mapper.Map<QueryResult<House>, QueryResultResource<HouseResource>>(queryResult);
         }
-
-
 
     }
 }

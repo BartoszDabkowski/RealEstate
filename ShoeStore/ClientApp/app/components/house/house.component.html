@@ -1,3 +1,19 @@
-<p>
-  house works!
-</p>
+<div class="container marg-top">
+    <div class="row" *ngIf="isLoaded">
+        <div class="col-sm-6">
+            <h2>{{house.name}}</h2>
+            <p>{{house.address.street}}, WA {{house.address.zipCode}}</p>
+            <p>{{house.description}}</p>
+            <ul>
+                <li>Bedrooms: {{house.bedrooms}}</li>
+                <li>Bathrooms: {{house.bathrooms}}</li>
+                <li>Square Footage: {{house.squareFootage}}</li>
+            </ul>
+            <h2>{{house.price | currency: 'USD': 'symbol'}}</h2>
+        </div>
+        <div class="col-sm-6">
+            <img src="/uploads/{{house.photos[0].fileName}}" alt="Alternate Text" />
+        </div>
+
+    </div>
+</div>

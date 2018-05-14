@@ -11,5 +11,6 @@ namespace ShoeStore.Core
         Task<IEnumerable<House>> GetHousesAsync();
         Task<IEnumerable<House>> GetHousesInCityAsync(int cityId);
         Task<IEnumerable<HouseType>> GetHouseTypesAsync();
+        Task<House> GetHouseAsync(int id);
     }
 }

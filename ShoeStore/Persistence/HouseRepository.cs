@@ -26,6 +26,13 @@ namespace ShoeStore.Persistence
                 .ToListAsync();
         }
 
+        public async Task<House> GetHouseAsync(int id)
+        {
+            return await _context.Houses
+                .Include(h => h.Photos)
+                .SingleOrDefaultAsync(h => h.Id.Equals(id));
+        }
+
         public async Task<QueryResult<House>> GetHousesAsync(HouseQuery queryObj)
         {
             var result = new QueryResult<House>();
