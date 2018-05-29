@@ -1,15 +1,11 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using RealEstate.Core;
 using RealEstate.Core.Models;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
-using ShoeStore.Extensions;
 
-namespace ShoeStore.Persistence
+namespace RealEstate.Persistence
 {
     public class CountyRepository : ICountyRepository
     {
@@ -45,6 +41,30 @@ namespace ShoeStore.Persistence
                 .Select(houses => houses.ho)
                 .Include(h => h.Photos)
                 .ToListAsync();
+        }
+
+        public async Task<Location> GetCountyLocationAsync(int id)
+        {
+            var county = await _context.Counties
+                .SingleOrDefaultAsync(c => c.Id.Equals(id));
+
+            return new Location
+            {
+                Latitude = county.Latitude,
+                Longitude = county.Longitude
+            };
+        }
+
+        public async Task<Location> GetCityLocationAsync(int id)
+        {
+            var city = await _context.Cities
+                .SingleOrDefaultAsync(c => c.Id.Equals(id));
+
+            return new Location
+            {
+                Latitude = city.Latitude,
+                Longitude = city.Longitude
+            };
         }
     }
 }

@@ -1,25 +1,36 @@
-
-<div class="container-fluid marg-top">
+<app-filter-bar></app-filter-bar>
+<div class="container-fluid marg-top"> 
     <div class="row">
-        <div class="col-sm-12">
-            <app-filter-bar></app-filter-bar>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-6 no-padding">
             <app-google-map></app-google-map>
         </div>
-        <div class="col-sm-5">
-            <div class="row">
-                <a class="card col-sm-6 text-white shadow" *ngFor="let h of houses" [routerLink]="['/houses/', h.id]">
-                    <img class="card-img" src="/uploads/{{h.photos[0].fileName}}" alt="Card image cap">
-                    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end">
-                        <h5 class="card-title">{{ h.name }}</h5>
-                        
-                            <p class="card-text text-right justify-content-end">{{h.price | currency: 'USD': 'symbol' }}</p>
+        <div class="col-sm-6 no-padding scroll">
+            <div *ngFor="let h of houses; let i = index">
+                <div class="card-group" *ngIf="i % 2 === 0">
+                    <div class="card text-white shadow" [routerLink]="['/houses/', h.id]" *ngIf="houses[i] !== undefined">
+                        <img class="card-img" src="/uploads/{{houses[i].photos[0].fileName}}" alt="Card image cap">
+                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end small-padding">
+                            <h5 class="card-title">{{ houses[i].name }}</h5>
+                            <span class="card-text">
+                                <strong class="large-text">{{houses[i].price | currency:'USD':true:'4.0' }}</strong> {{ houses[i].bedrooms}} bd &middot; {{houses[i].bathrooms}} ba &middot; {{houses[i].squareFootage}} sqft
+                            </span>
+                            <span class="card-text">{{ houses[i].address.street }}, {{ houses[i].address.city.name }}, {{ houses[i].address.zipCode }}</span>
+                        </div>
                     </div>
-                </a>
+                    <div class="card text-white shadow" [routerLink]="['/houses/', h.id]" *ngIf="houses[i + 1] !== undefined">
+                        <img class="card-img" src="/uploads/{{houses[i + 1].photos[0].fileName}}" alt="Card image cap">
+                        <div class="card-img-overlay h-100 d-flex flex-column justify-content-end small-padding">
+                            <h5 class="card-title">{{ houses[i + 1].name }}</h5>
+                            <span class="card-text">
+                                <strong class="large-text">{{houses[i + 1].price | currency:'USD':true:'4.0' }}</strong> {{ houses[i + 1].bedrooms}} bd &middot; {{houses[i + 1].bathrooms}}ba &middot; {{houses[i + 1].squareFootage}}sqft
+                            </span>
+                            <span class="card-text">{{ houses[i + 1].address.street }}, {{ houses[i + 1].address.city.name }}, {{ houses[i + 1].address.zipCode }}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+

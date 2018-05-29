@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
-using Microsoft.AspNetCore.NodeServices;
+using RealEstate.Controllers.Resources;
 using RealEstate.Core.Models;
-using ShoeStore.Controllers.Resources;
-using ShoeStore.Core.Models;
 
-namespace ShoeStore.Mapping
+namespace RealEstate.Mapping
 {
     public class MappingProfile : Profile
     {
@@ -20,6 +16,7 @@ namespace ShoeStore.Mapping
             CreateMap<HouseQuery, HouseQueryResource>();
             CreateMap<City, KeyValuePairResource>();
             CreateMap<HouseType, KeyValuePairResource>();
+            CreateMap<Location, LocationResource>();
             CreateMap(typeof(QueryResult<>), typeof(QueryResultResource<>));
             
             // API to Domain Resource

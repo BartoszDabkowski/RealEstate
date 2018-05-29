@@ -4,12 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using RealEstate.Core;
 using RealEstate.Core.Models;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
-using ShoeStore.Extensions;
+using RealEstate.Extensions;
 
-namespace ShoeStore.Persistence
+namespace RealEstate.Persistence
 {
     public class HouseRepository : IHouseRepository
     {
@@ -39,6 +38,7 @@ namespace ShoeStore.Persistence
 
             var query = _context.Houses
                 .Include(h => h.Photos)
+                .Include(h => h.Address.City)
                 .AsQueryable();
 
             query = query.ApplyFiltering(queryObj);

@@ -1,10 +1,7 @@
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using RealEstate.Core.Models;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
 
-namespace ShoeStore.Persistence
+namespace RealEstate.Persistence
 {
     public class RealEstateDbContext : DbContext
     {

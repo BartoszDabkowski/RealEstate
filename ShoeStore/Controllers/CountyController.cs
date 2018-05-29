@@ -1,20 +1,14 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using RealEstate.Controllers.Resources;
 using RealEstate.Core;
 using RealEstate.Core.Models;
-using ShoeStore.Controllers.Resources;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
-using ShoeStore.Persistence;
 
-namespace ShoeStore.Controllers
+namespace RealEstate.Controllers
 {
-    [Route("api/counties")]    
+    [Route("api")]    
     public class CountyController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -27,7 +21,7 @@ namespace ShoeStore.Controllers
                 throw new System.ArgumentNullException(nameof(mapper));
         }
 
-        [HttpGet]
+        [HttpGet("counties")]
         public async Task<IActionResult> GetCountiesAsync()
         {
             var counties = await _unitOfWork.Counties.GetCountiesAsync();
@@ -38,7 +32,7 @@ namespace ShoeStore.Controllers
             return Ok(_mapper.Map<IEnumerable<County>, IEnumerable<CountyResource>>(counties));
         }
 
-        [HttpGet("{id}/cities")]
+        [HttpGet("counties/{id}/cities")]
         public async Task<IActionResult> GetCitiesAsync(int id)
         {
             var cities = await _unitOfWork.Counties.GetCitiesinCountyAsync(id);
@@ -49,7 +43,7 @@ namespace ShoeStore.Controllers
             return Ok(_mapper.Map<IEnumerable<City>, IEnumerable<CityResource>>(cities));
         }
 
-        [HttpGet("{id}/houses")]
+        [HttpGet("counties/{id}/houses")]
         public async Task<IActionResult> GetCountiesAsync(int id)
         {
             var houses = await _unitOfWork.Counties.GetHousesinCountyAsync(id);
@@ -58,6 +52,28 @@ namespace ShoeStore.Controllers
                 return NotFound();
 
             return Ok(_mapper.Map<IEnumerable<House>, IEnumerable<HouseResource>>(houses));
+        }
+
+        [HttpGet("counties/{id}/location")]
+        public async Task<IActionResult> GetCountyLocationAsync(int id)
+        {
+            var location = await _unitOfWork.Counties.GetCountyLocationAsync(id);
+
+            if (location == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<Location, LocationResource>(location));
+        }
+
+        [HttpGet("cities/{id}/location")]
+        public async Task<IActionResult> GetCityLocationAsync(int id)
+        {
+            var location = await _unitOfWork.Counties.GetCityLocationAsync(id);
+
+            if (location == null)
+                return NotFound();
+
+            return Ok(_mapper.Map<Location, LocationResource>(location));
         }
     }
 }

@@ -1,9 +1,21 @@
 
-
-.marg-top {
-    margin-top: 25px;
-}
-
 .shadow {
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+}
+.large-text {
+    font-size: 1.5rem;
+}
+
+.scroll {
+    height: 83vh;
+    overflow-y: scroll;
+}
+
+.no-padding {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.small-padding {
+    padding: .25rem;
 }

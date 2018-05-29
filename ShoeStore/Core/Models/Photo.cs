@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using RealEstate.Core.Models;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShoeStore.Core.Models
+namespace RealEstate.Core.Models
 {
     public class Photo
     {

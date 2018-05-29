@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HouseService } from '../../services/house.service';
 import { CountyService } from '../../services/county.service';
 import { DataTransferService } from "../../services/data-transfer.service";
+import { Location } from "../../models/Location";
 
 @Component({
   selector: 'app-filter-bar',
@@ -13,8 +14,9 @@ export class FilterBarComponent implements OnInit {
     counties: any[];
     cities: any[];
     houses: any[];
-    filter: any = {};
+    filter: any = { sortBy: 'price', isSortAscending: true};
     isCollapsed = false;
+    location: Location = new Location();
 
     constructor(
         private houseService: HouseService,
@@ -35,26 +37,38 @@ export class FilterBarComponent implements OnInit {
     }
 
     onCountyChange() {
+        delete this.filter.cityId;
+        this.dataService.changeLocation(this.filter.countyId);
+
         var selectedCounty = this.counties.find(c => c.id == this.filter.countyId);
         this.cities = selectedCounty.cities.filter(this.checkCities);
-
-        this.dataService.changeId(this.filter.countyId);
     }
 
     onCityChange() {
-        var selectedCity = this.cities.find(c => c.id == this.filter.cityId);
-        this.houseService.getHousesInCity(selectedCity.id).subscribe(houses =>
-            this.houses = houses);
+        this.dataService.changeCityLocation(this.filter.cityId);
     }
 
+    sortBy(columnName: string) {
+        if (this.filter.sortBy === columnName) {
+            this.filter.isSortAscending = !this.filter.isSortAscending;
+        } else {
+            this.filter.sortBy = columnName;
+            this.filter.isSortAscending = true;
+        }
+        this.filterHouses();
+    }
+
+    // Filtering cities and counties that have no houses
     private checkCounties(county: any) {
         var validCounties = [53061, 53033];
         return validCounties.indexOf(county.id) > -1;
     }
 
     private checkCities(city: any) {
-        var validCounties = [27];
+        var validCounties = [5, 8, 27];
         return validCounties.indexOf(city.id) > -1;
     }
+
+
 
 }

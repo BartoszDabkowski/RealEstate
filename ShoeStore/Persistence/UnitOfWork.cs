@@ -1,8 +1,7 @@
 using System.Threading.Tasks;
 using RealEstate.Core;
-using ShoeStore.Core;
 
-namespace ShoeStore.Persistence
+namespace RealEstate.Persistence
 {
     public class UnitOfWork : IUnitOfWork
     {

@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ShoeStore.Core.Models;
+using RealEstate.Core.Models;
 
-namespace ShoeStore.Core
+namespace RealEstate.Core
 {
     public interface IPhotoRepository
     {

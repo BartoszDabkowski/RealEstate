@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using ShoeStore.Core;
 
 namespace RealEstate.Core
 {

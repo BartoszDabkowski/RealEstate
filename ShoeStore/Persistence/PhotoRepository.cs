@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
+using RealEstate.Core;
+using RealEstate.Core.Models;
 
-namespace ShoeStore.Persistence
+namespace RealEstate.Persistence
 {
     public class PhotoRepository : IPhotoRepository
     {

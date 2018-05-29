@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Query.Internal;
-using ShoeStore.Extensions;
+﻿using RealEstate.Extensions;
 
-namespace ShoeStore.Core.Models
+namespace RealEstate.Core.Models
 {
     public class HouseQuery : IQueryObject
     {
+        public int? CountyId { get; set; }
+
         public int? CityId { get; set; }
         public int? HouseTypeId { get; set; }
         public int? MinBathrooms { get; set; }

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RealEstate.Core.Models
 {
@@ -15,6 +13,10 @@ namespace RealEstate.Core.Models
         [StringLength(255)]
         public string Name { get; set; }
         public IEnumerable<City> Cities { get; set; }
+        [Column(TypeName = "decimal(9, 6)")]
+        public decimal Longitude { get; set; }
+        [Column(TypeName = "decimal(9, 6)")]
+        public decimal Latitude { get; set; }
 
         public County()
         {

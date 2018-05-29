@@ -1,18 +1,12 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using RealEstate.Controllers.Resources;
 using RealEstate.Core;
 using RealEstate.Core.Models;
-using ShoeStore.Controllers.Resources;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
-using ShoeStore.Persistence;
 
-namespace ShoeStore.Controllers
+namespace RealEstate.Controllers
 {
     [Route("api/houses")]    
     public class HouseController : Controller

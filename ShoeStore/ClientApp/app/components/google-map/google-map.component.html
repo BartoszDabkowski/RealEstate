@@ -1,5 +1,7 @@
-<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-    <agm-marker *ngFor="let h of houses" [latitude]="h.latitude" [longitude]="h.longitude" (markerClick)="onMarkerClick(h)">
+<agm-map [latitude]="location.latitude" [longitude]="location.longitude" [zoom]="zoom">
+    <agm-marker 
+                style="height: 10px; width: 10px;"
+        *ngFor="let h of houses" [latitude]="h.latitude" [longitude]="h.longitude" (markerClick)="onMarkerClick(h)">
         <agm-info-window>
             <h3>{{ h.name }}</h3>{{h.price | currency: 'USD': 'symbol' }}
         </agm-info-window>

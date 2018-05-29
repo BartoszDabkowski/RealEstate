@@ -1,9 +1,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using RealEstate.Core.Models;
-using ShoeStore.Core.Models;
 
-namespace ShoeStore.Core
+namespace RealEstate.Core
 {
     public interface IHouseRepository
     {

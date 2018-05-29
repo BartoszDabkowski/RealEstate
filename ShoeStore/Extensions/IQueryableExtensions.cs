@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using RealEstate.Core.Models;
-using ShoeStore.Core.Models;
 
-namespace ShoeStore.Extensions
+namespace RealEstate.Extensions
 {
     public static class IQueryableExtensions
     {
         public static IQueryable<House> ApplyFiltering(this IQueryable<House> query, HouseQuery queryObj)
         {
+            if (queryObj.CountyId.HasValue)
+                query = query.Where(h => h.Address.City.CountyId.Equals(queryObj.CountyId));
+
             if (queryObj.CityId.HasValue)
                 query = query.Where(h => h.Address.CityId.Equals(queryObj.CityId));
 

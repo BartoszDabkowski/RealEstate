@@ -1,4 +1,4 @@
-namespace ShoeStore.Controllers.Resources
+namespace RealEstate.Controllers.Resources
 {
     public class KeyValuePairResource
     {

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ShoeStore.Controllers.Resources
+﻿namespace RealEstate.Controllers.Resources
 {
     public class HouseQueryResource
     {
+        public int? CountyId { get; set; }
+
         public int? CityId { get; set; }
         public int? HouseTypeId { get; set; }
         public int? MinBathrooms { get; set; }

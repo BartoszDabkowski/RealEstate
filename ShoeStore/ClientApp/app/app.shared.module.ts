@@ -53,8 +53,7 @@ NgModule({
         }),
         NgbModule.forRoot(),
         RouterModule.forRoot([
-            { path: '', redirectTo: 'home', pathMatch: 'full' },
-            { path: 'home', component: HomeComponent },
+            { path: '', redirectTo: 'house-list', pathMatch: 'full' },
             { path: 'house-list', component: HouseListComponent },
             { path: 'houses/:id', component: HouseComponent },
             { path: '**', redirectTo: 'home' }

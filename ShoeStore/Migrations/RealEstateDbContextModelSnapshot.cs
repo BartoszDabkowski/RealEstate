@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using ShoeStore.Persistence;
+using RealEstate.Persistence;
 using System;
 
 namespace RealEstate.Migrations
@@ -27,6 +27,12 @@ namespace RealEstate.Migrations
 
                     b.Property<int>("CountyId");
 
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(9, 6)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(255);
@@ -42,6 +48,12 @@ namespace RealEstate.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("Latitude")
+                        .HasColumnType("decimal(9, 6)");
+
+                    b.Property<decimal>("Longitude")
+                        .HasColumnType("decimal(9, 6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -107,7 +119,7 @@ namespace RealEstate.Migrations
                     b.ToTable("HouseType");
                 });
 
-            modelBuilder.Entity("ShoeStore.Core.Models.Photo", b =>
+            modelBuilder.Entity("RealEstate.Core.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -166,7 +178,7 @@ namespace RealEstate.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ShoeStore.Core.Models.Photo", b =>
+            modelBuilder.Entity("RealEstate.Core.Models.Photo", b =>
                 {
                     b.HasOne("RealEstate.Core.Models.House", "House")
                         .WithMany("Photos")

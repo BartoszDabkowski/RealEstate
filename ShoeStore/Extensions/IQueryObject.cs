@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ShoeStore.Extensions
+﻿namespace RealEstate.Extensions
 {
     public interface IQueryObject
     {

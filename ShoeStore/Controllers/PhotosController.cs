@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.CodeAnalysis.Semantics;
 using Microsoft.Extensions.Options;
+using RealEstate.Controllers.Resources;
 using RealEstate.Core;
-using ShoeStore.Controllers.Resources;
-using ShoeStore.Core;
-using ShoeStore.Core.Models;
-using SQLitePCL;
+using RealEstate.Core.Models;
 
-namespace ShoeStore.Controllers
+namespace RealEstate.Controllers
 {[Route("/api/photos")]
     public class PhotosController : Controller
     {
