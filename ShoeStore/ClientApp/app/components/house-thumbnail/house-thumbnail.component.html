@@ -1,0 +1,10 @@
+
+    <img class="card-img" src="/uploads/{{house.photos[0].fileName}}" alt="Card image cap">
+    <div class="card-img-overlay h-100 d-flex flex-column justify-content-end small-padding">
+
+        <span class="card-text"><img src="{{house.houseType.iconPath}}" class="small-img"/>  {{house.houseType.name}}</span>
+            <span class="card-text">
+                <strong class="large-text">{{house.price | currency:'USD':true:'4.0' }}</strong> {{ house.bedrooms}} bd &middot; {{house.bathrooms}}ba &middot; {{house.squareFootage}}sqft
+            </span>
+            <span class="card-text">{{ house.address.street }}, {{ house.address.city.name }}, {{ house.address.zipCode }}</span>
+    </div>

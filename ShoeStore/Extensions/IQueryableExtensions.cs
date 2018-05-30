@@ -53,7 +53,7 @@ namespace RealEstate.Extensions
                 queryObj.Page = 1;
 
              if (queryObj.PageSize <= 0)
-                queryObj.PageSize = 10;
+                queryObj.PageSize = 30;
 
             return query.Skip((queryObj.Page - 1) * queryObj.PageSize).Take(queryObj.PageSize);
         }

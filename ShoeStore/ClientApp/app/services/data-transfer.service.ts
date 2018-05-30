@@ -9,8 +9,12 @@ import { Location } from "../models/location";
 @Injectable()
 export class DataTransferService {
 
+    private filter: any = {};
     private houses = new BehaviorSubject<House[]>(Array<House>());
     currentHouses = this.houses.asObservable();
+
+    private housesInList = new BehaviorSubject<any>({});
+    currentHousesInList = this.housesInList.asObservable();
 
     private location = new BehaviorSubject<Location>({
         latitude: 47.805838,
@@ -23,7 +27,22 @@ export class DataTransferService {
         private countyService: CountyService) { }
 
     applyFiltering(filter: any) {
+        this.filter = filter;
+        this.filter.page = 1;
+        this.houseService.getHouses(this.filter).subscribe(houses => this.housesInList.next(houses));
+
+        delete filter.pageSize;
+        delete filter.page;
         this.houseService.getHouses(filter).subscribe(houses => this.houses.next(houses.items));
+    }
+    getHouses() {
+        this.houseService.getHouses(null).subscribe(houses => this.houses.next(houses.items));
+    }
+
+    applyPaging(page: any) {
+        this.filter.page = page;
+        this.filter.pageSize = 6;
+        this.houseService.getHouses(this.filter).subscribe(houses => this.housesInList.next(houses));
     }
 
     changeId(id: number) {

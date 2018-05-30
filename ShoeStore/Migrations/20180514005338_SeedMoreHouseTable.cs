@@ -36,7 +36,7 @@ namespace RealEstate.Migrations
                                         'Lorem ipsum dolor sit amet, eu eam omittam electram definitiones, pro mazim oratio definitionem te. In nam prompta luptatum. Per ei hinc inani erroribus. Falli suscipit at sea, usu in putant incorrupte. Ubique senserit eu eos, percipit efficiendi an mei. Est eruditi alienum perpetua et, duo eu choro quodsi. Harum virtute at vis. Duo cetero laoreet at, sea error nostrum moderatius id. Possim euripidis has ea, mea dicit legere an. Sit ut enim verterem pericula, ad dicant ignota prodesset usu, vel ad aeque nemore petentium. Ex sed meis congue definitionem, eum mazim molestie at.',
                                         0, 0, 
                                         (SELECT ID FROM HouseType WHERE Name = 'Manufacturd Home'), 
-                                        47.933730, -122.091643, 'Humble Manufactured Home', 250000.00, 1500, 
+                                        47.918226, -122.090426, 'Humble Manufactured Home', 250000.00, 1500, 
                                         (SELECT ID FROM Cities WHERE Name = 'Snohomish'), 
                                         '4567 14th Pl Sw', 98290)");
 
@@ -56,7 +56,7 @@ namespace RealEstate.Migrations
                                         'Lorem ipsum dolor sit amet, eu eam omittam electram definitiones, pro mazim oratio definitionem te. In nam prompta luptatum. Per ei hinc inani erroribus. Falli suscipit at sea, usu in putant incorrupte. Ubique senserit eu eos, percipit efficiendi an mei. Est eruditi alienum perpetua et, duo eu choro quodsi. Harum virtute at vis. Duo cetero laoreet at, sea error nostrum moderatius id. Possim euripidis has ea, mea dicit legere an. Sit ut enim verterem pericula, ad dicant ignota prodesset usu, vel ad aeque nemore petentium. Ex sed meis congue definitionem, eum mazim molestie at.',
                                         0, 0, 
                                         (SELECT ID FROM HouseType WHERE Name = 'Manufacturd Home'), 
-                                        47.921574, -122.089312, 'Great For Kids!', 150000.00, 1000, 
+                                        47.927027, -122.080299, 'Great For Kids!', 150000.00, 1000, 
                                         (SELECT ID FROM Cities WHERE Name = 'Snohomish'), 
                                         '24590 Ford Ave Sw', 98290)");
 

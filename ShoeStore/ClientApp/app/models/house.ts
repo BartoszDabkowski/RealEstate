@@ -11,7 +11,11 @@ export class House{
     hasWaterfront: boolean;
     longitude: number;
     latitude: number;
-    houseType: string;
+    houseType: {
+        id: number;
+        name: string;
+        iconPath: string;
+    };
     price: number;
     squareFootage: number;
     address: {

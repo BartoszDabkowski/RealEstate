@@ -20,20 +20,13 @@ namespace RealEstate.Controllers
             _mapper = mapper ??
                 throw new System.ArgumentNullException(nameof(mapper));
         }
-        //[HttpGet]
-        //public async Task<IEnumerable<HouseResource>> GetHouseAsync()
-        //{
-        //    var houses = await _unitOfWork.Houses.GetHousesAsync();
-
-        //    return _mapper.Map<IEnumerable<House>, IEnumerable<HouseResource>>(houses);
-        //}
 
         [HttpGet("types")]
-        public async Task<IEnumerable<KeyValuePairResource>> GetHouseTypesAsync()
+        public async Task<IEnumerable<HouseTypeResource>> GetHouseTypesAsync()
         {
             var houseTypes = await _unitOfWork.Houses.GetHouseTypesAsync();
 
-            return _mapper.Map<IEnumerable<HouseType>, IEnumerable<KeyValuePairResource>>(houseTypes);
+            return _mapper.Map<IEnumerable<HouseType>, IEnumerable<HouseTypeResource>>(houseTypes);
         }
 
         [HttpGet("{id}")]

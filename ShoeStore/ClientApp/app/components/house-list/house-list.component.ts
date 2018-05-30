@@ -10,19 +10,18 @@ import { House } from "../../models/house";
   styleUrls: ['./house-list.component.css']
 })
 export class HouseListComponent implements OnInit {
-    counties: any[];
-    cities: any[];
-    county: any = {};
-    city: any = {};
-    message: string;
-    houses: any[];
+    houses: any;
     
     constructor(
         private houseService: HouseService,
-        private countyService: CountyService,
         private dataService: DataTransferService) { }
 
     ngOnInit() {
-        this.dataService.currentHouses.subscribe(houses => this.houses = houses);
+        this.dataService.currentHousesInList.subscribe(housesInList => this.houses = housesInList);
+        this.dataService.applyPaging(1);
+    }
+
+    onPageChange(page: any) {
+        this.dataService.applyPaging(page);
     }
 }

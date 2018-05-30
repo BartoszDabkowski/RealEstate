@@ -21,6 +21,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 
 import { HouseComponent } from './components/house/house.component';
 import { HouseListComponent } from './components/house-list/house-list.component';
+import { HouseThumbnailComponent } from './components/house-thumbnail/house-thumbnail.component';
 import { RangeInputComponent } from './components/range-input/range-input.component';
 import { FilterBarComponent } from './components/filter-bar/filter-bar.component';
 import { CountyService } from './services/county.service';
@@ -39,6 +40,7 @@ NgModule({
         PaginationComponent,
         HouseComponent,
         HouseListComponent,
+        HouseThumbnailComponent,
         RangeInputComponent,
         FilterBarComponent,
         GoogleMapComponent

@@ -16,6 +16,7 @@ namespace RealEstate.Mapping
             CreateMap<HouseQuery, HouseQueryResource>();
             CreateMap<City, KeyValuePairResource>();
             CreateMap<HouseType, KeyValuePairResource>();
+            CreateMap<HouseType, HouseTypeResource>();
             CreateMap<Location, LocationResource>();
             CreateMap(typeof(QueryResult<>), typeof(QueryResultResource<>));
             

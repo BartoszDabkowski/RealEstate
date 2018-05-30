@@ -14,7 +14,12 @@ export class FilterBarComponent implements OnInit {
     counties: any[];
     cities: any[];
     houses: any[];
-    filter: any = { sortBy: 'price', isSortAscending: true};
+    filter: any = {
+        sortBy: 'price',
+        isSortAscending: true,
+        page: 1,
+        pageSize: 6
+    };
     isCollapsed = false;
     location: Location = new Location();
 
@@ -33,7 +38,7 @@ export class FilterBarComponent implements OnInit {
 
     filterHouses() {
         this.dataService.applyFiltering(this.filter);
-       this.isCollapsed = true;
+        this.isCollapsed = true;
     }
 
     onCountyChange() {

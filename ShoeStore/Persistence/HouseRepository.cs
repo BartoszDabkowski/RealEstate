@@ -22,6 +22,7 @@ namespace RealEstate.Persistence
         {
             return await _context.Houses
                 .Include(h => h.Photos)
+                .Include(h => h.HouseType)
                 .ToListAsync();
         }
 
@@ -29,6 +30,7 @@ namespace RealEstate.Persistence
         {
             return await _context.Houses
                 .Include(h => h.Photos)
+                .Include(h => h.HouseType)
                 .SingleOrDefaultAsync(h => h.Id.Equals(id));
         }
 
@@ -38,6 +40,7 @@ namespace RealEstate.Persistence
 
             var query = _context.Houses
                 .Include(h => h.Photos)
+                .Include(h => h.HouseType)
                 .Include(h => h.Address.City)
                 .AsQueryable();
 
@@ -64,6 +67,7 @@ namespace RealEstate.Persistence
             return await _context.Houses
                 .Where(h => h.Address.CityId.Equals(cityId))
                 .Include(h => h.Photos)
+                .Include(h => h.HouseType)
                 .ToListAsync();
         }
 

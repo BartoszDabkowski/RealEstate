@@ -9,9 +9,9 @@ namespace RealEstate.Controllers.Resources
         public int Id { get; set; }
         public string Name { get; set; }
         public int HouseTypeId { get; set; }
-        public HouseType HouseType { get; set; }
+        public HouseTypeResource HouseType { get; set; }
         public decimal Price { get; set; }
-        public Address Address { get; set; }
+        public AddressResource Address { get; set; }
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
         public int Bedrooms { get; set; }
